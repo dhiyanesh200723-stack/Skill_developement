@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>6 CSS Box Model</title>
+</head>
+<body>
+
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #e0e5ec; margin: 0; }
+        /* Neumorphism Box Model */
+        .neumorphic-box {
+            width: 250px;
+            height: 250px;
+            background: #e0e5ec;
+            border-radius: 30px;
+            /* Box-sizing changes how padding/border is calculated */
+            box-sizing: border-box; 
+            padding: 40px;
+            /* The borders and shadows define the 'box' visually */
+            box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #4d5c6f;
+            font-weight: bold;
+        }
+    </style>
+    <div class='neumorphic-box'>Advanced Box Model (Neumorphism & Box-Sizing)</div>
+    
+</body>
+</html>

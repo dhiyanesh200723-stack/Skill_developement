@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>1 Introduction to CSS</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --main-bg: #fafafa;
+            --accent: #ff6b6b;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--main-bg);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .intro-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--accent);
+            max-width: 500px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+    <div class='intro-card'>
+        <h2>CSS</h2>
+        <p>Using CSS Custom Properties (variables), Flexbox for centering, and soft shadows for a modern aesthetic.</p>
+    </div>
+
+</body>
+
+</html>

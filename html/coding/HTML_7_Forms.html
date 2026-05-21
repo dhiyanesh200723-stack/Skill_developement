@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>7 Forms</title>
+</head>
+<body>
+
+    <div>
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+            <h2>Contact Us</h2>
+            
+            <label for='name'>Name:</label>
+            <input type='text' id='name' name='name' required maxlength="50"><br><br>
+            
+            <label for='subject'>Subject:</label>
+            <select id='subject' name='subject'>
+                <optgroup label="Support">
+                    <option value='tech'>Technical Support</option>
+                    <option value='bill'>Billing</option>
+                </optgroup>
+                <optgroup label="Sales">
+                    <option value='new'>New Customer</option>
+                    <option value='upgrade'>Upgrade</option>
+                </optgroup>
+            </select><br><br>
+
+            <label for="file">Attachment:</label>
+            <input type="file" id="file" name="file" accept=".pdf,.doc"><br><br>
+            
+            <button type='submit'>Send Message</button>
+        </form>
+    </div>
+    
+</body>
+</html>

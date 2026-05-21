@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>9 Transition</title>
+</head>
+<body>
+
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #222; margin: 0; font-family: sans-serif; gap: 40px; }
+        
+        .animated-btn {
+            position: relative;
+            padding: 15px 40px;
+            background: transparent;
+            color: #00d2ff;
+            border: 2px solid #00d2ff;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .animated-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #00d2ff;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .animated-btn:hover { color: #222; }
+        .animated-btn:hover::before { transform: scaleX(1); }
+
+        .spinner {
+            width: 50px; height: 50px;
+            border: 5px solid rgba(0, 210, 255, 0.2);
+            border-top-color: #00d2ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+    <button class='animated-btn'>Hover Me</button>
+    <div class='spinner'></div>
+    
+</body>
+</html>

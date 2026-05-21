@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>4 CSS Colours</title>
+</head>
+<body>
+
+    <style>
+        body { font-family: sans-serif; display: flex; gap: 20px; padding: 40px; background: #1a1a2e; color: white; }
+        .color-box { padding: 30px; border-radius: 8px; flex: 1; text-align: center; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .hex { background-color: #e94560; }
+        .rgb { background-color: rgb(15, 52, 96); }
+        .hsl { background-color: hsl(300, 100%, 25%); }
+        .rgba { background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); }
+    </style>
+    <div class='color-box hex'>HEX Color</div>
+    <div class='color-box rgb'>RGB Color</div>
+    <div class='color-box hsl'>HSL Color</div>
+    <div class='color-box rgba'>RGBA (Glassmorphism)</div>
+    
+</body>
+</html>

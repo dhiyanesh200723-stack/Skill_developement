@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>8 Student Application Form Task 1</title>
+</head>
+<body>
+
+    <div>
+        <h2>Student Enrollment</h2>
+        <form action="/enroll" method="POST">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="studentName">Full Name:</label>
+                <input type="text" id="studentName" name="studentName" required autofocus><br><br>
+                
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="m"> Male</label>
+                <label><input type="radio" name="gender" value="f"> Female</label><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Academic Info</legend>
+                <label for="major">Major:</label>
+                <input type='text' id="major" name="major" list='majors'>
+                <datalist id='majors'>
+                    <option value='Computer Science'>
+                    <option value='Information Technology'>
+                    <option value='Software Engineering'>
+                </datalist><br><br>
+                
+                <label for="enrollmentDate">Enrollment Date:</label>
+                <input type='date' id="enrollmentDate" name="enrollmentDate"><br><br>
+            </fieldset>
+            
+            <input type='submit' value='Enroll Now'>
+            <input type='reset' value='Clear Form'>
+        </form>
+    </div>
+    
+</body>
+</html>

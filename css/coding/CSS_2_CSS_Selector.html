@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>2 CSS Selector</title>
+</head>
+<body>
+
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        /* Descendant Selector */
+        .container p { color: #34495e; }
+        /* Child Selector */
+        .container > h3 { color: #2980b9; }
+        /* Sibling Selector */
+        h3 + p { font-weight: bold; }
+        /* Attribute Selector */
+        input[type="text"] { border: 2px solid #bdc3c7; border-radius: 4px; padding: 5px; }
+        /* Pseudo-class */
+        input[type="text"]:focus { border-color: #3498db; outline: none; }
+    </style>
+    <div class='container'>
+        <h3>Advanced Selectors</h3>
+        <p>This paragraph is styled via sibling selector.</p>
+        <div><p>This one via descendant selector.</p></div>
+        <input type="text" placeholder="Focus me!">
+    </div>
+    
+</body>
+</html>

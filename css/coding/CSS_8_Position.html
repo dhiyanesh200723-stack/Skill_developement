@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>8 Position</title>
+</head>
+<body>
+
+    <style>
+        body { margin: 0; height: 150vh; font-family: sans-serif; background: linear-gradient(#fff, #ddd); }
+        .navbar { 
+            position: sticky; 
+            top: 0; 
+            background: rgba(44, 62, 80, 0.9); 
+            backdrop-filter: blur(10px);
+            color: white; 
+            padding: 20px; 
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #e74c3c;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            cursor: pointer;
+            z-index: 999;
+        }
+        .content { padding: 50px; text-align: center; }
+    </style>
+    <nav class='navbar'>Sticky Navigation Bar (Scroll down!)</nav>
+    <div class='content'>
+        <h1>Advanced Positioning</h1>
+        <p>Scroll the page to see `position: sticky` and `position: fixed` in action.</p>
+    </div>
+    <div class='floating-btn'>FAB</div>
+    
+</body>
+</html>

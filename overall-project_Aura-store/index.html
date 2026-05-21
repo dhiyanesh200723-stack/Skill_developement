@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA // Premium Cybernetic Sneaker Store</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Step into the future with AURA. Premium, hyper-designed cybernetic footwear featuring neon glassmorphic soles, adaptive fits, and unparalleled comfort. Explore the cyber-streetwear revolution today.">
+  <meta name="keywords" content="cyberpunk sneaker, futuristic shoes, neon sneakers, glassmorphism design, techwear shoes, aura store">
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Ambient Neon Background Glowing Gradients -->
+  <div class="glow-overlay"></div>
+  
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="#" class="logo" id="siteLogo">
+        <i class="fa-solid fa-cube logo-icon"></i> AURA
+      </a>
+      
+      <nav class="nav-bar">
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link-item" id="navHome">Home</a></li>
+          <li><a href="#store" class="nav-link-item" id="navShop">Store</a></li>
+          <li><a href="#about" class="nav-link-item" id="navRelease">Releases</a></li>
+          <li><a href="#footer" class="nav-link-item" id="navContact">Connect</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button class="cart-trigger" id="cartTrigger" aria-label="Open shopping cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartBadgeCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="tagline"><i class="fa-solid fa-microchip"></i> System Version 2.06</span>
+          <h1 class="hero-title">
+            Step Into <span class="glow-text">Cybernetic</span> Footwear
+          </h1>
+          <p class="hero-description">
+            AURA footwear integrates adaptive fit architectures, bioluminescent soles, and responsive composite materials to define next-generation street fashion.
+          </p>
+          <div class="hero-actions" style="display: flex; gap: 1.2rem;">
+            <a href="#store" class="btn btn-primary" id="heroShopBtn">
+              Explore Collection <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <button class="btn btn-secondary" id="heroLearnBtn">
+              Interface Details
+            </button>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="hero-circle-bg"></div>
+          <div class="hero-img-wrap">
+            <!-- Main Hero Image (Pre-generated Sneaker) -->
+            <img src="assets/hero_sneaker.png" alt="Aura Pulse Cybernetic Sneaker" class="hero-img" id="heroSneakerImage">
+          </div>
+          
+          <div class="hero-badge-wrap">
+            <div class="hero-badge">
+              <span class="icon"><i class="fa-solid fa-bolt"></i></span>
+              <div class="text">
+                <p style="margin: 0; color: var(--text-primary);">Hyper Charged</p>
+                <p style="margin: 0; font-size: 0.7rem; color: var(--text-secondary);">Biolume Active</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Store / Products Section -->
+    <section class="store-section" id="store">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2 class="section-title">AURA // <span>Catalog</span></h2>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">Select an item to view structural variants and execute deployment.</p>
+          </div>
+          
+          <!-- Category Filters -->
+          <ul class="filter-bar" id="filterBar">
+            <li><button class="filter-btn active" data-filter="all" id="filterAll">All Specs</button></li>
+            <li><button class="filter-btn" data-filter="Neon Cyber" id="filterNeon">Neon Cyber</button></li>
+            <li><button class="filter-btn" data-filter="Stealth" id="filterStealth">Stealth</button></li>
+            <li><button class="filter-btn" data-filter="Hyper-Light" id="filterHyper">Hyper-Light</button></li>
+          </ul>
+        </div>
+        
+        <!-- Product Grid (Populated Dynamically in JS) -->
+        <div class="product-grid" id="productGrid">
+          <!-- Dynamic cards go here -->
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Slide-Out Shopping Cart Sidebar -->
+  <div class="cart-sidebar-overlay" id="cartOverlay">
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3 class="cart-title"><i class="fa-solid fa-folder-open" style="color: var(--accent-cyan);"></i> Cart Manifest</h3>
+        <button class="cart-close" id="cartCloseBtn" aria-label="Close cart">&times;</button>
+      </div>
+      
+      <!-- Cart items container -->
+      <div class="cart-items-container" id="cartItemsContainer">
+        <!-- Rendered by JS -->
+      </div>
+      
+      <!-- Cart Footer -->
+      <div class="cart-footer">
+        <div class="cart-summary-line">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="cart-summary-line">
+          <span>Taxes (Simulated 8%)</span>
+          <span id="cartTaxes">$0.00</span>
+        </div>
+        <div class="cart-summary-line total">
+          <span>Grand Total</span>
+          <span id="cartGrandTotal">$0.00</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" id="checkoutBtn">
+          Initialize Transaction <i class="fa-solid fa-lock"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product Details & Checkout Interactive Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      
+      <!-- View 1: Product Details View -->
+      <div class="product-details-view" id="productDetailsView">
+        <div class="modal-grid">
+          <!-- Image Gallery -->
+          <div class="modal-gallery">
+            <div class="modal-gallery-glow" id="modalGlow"></div>
+            <img src="" alt="Sneaker Detail" class="modal-main-img" id="modalMainImg">
+            
+            <div class="modal-thumbs" id="modalThumbs">
+              <!-- Thumbnail indicators -->
+            </div>
+          </div>
+          
+          <!-- Detailed Options -->
+          <div class="modal-body">
+            <span class="modal-cat" id="modalCat">Sneaker Category</span>
+            <h3 class="modal-title" id="modalTitle">Sneaker Name</h3>
+            <span class="modal-price" id="modalPrice">$0.00</span>
+            
+            <p class="modal-desc" id="modalDesc">Detailed descriptions of cyberpunk cyber-wear shoe.</p>
+            
+            <!-- Variants -->
+            <div class="modal-options-group">
+              <h4 class="modal-option-title">Select Caliber Size (US)</h4>
+              <div class="size-selector" id="modalSizes">
+                <button class="size-btn active">8</button>
+                <button class="size-btn">9</button>
+                <button class="size-btn">10</button>
+                <button class="size-btn">11</button>
+                <button class="size-btn">12</button>
+              </div>
+            </div>
+            
+            <div class="modal-options-group">
+              <h4 class="modal-option-title">Interface Luminescence</h4>
+              <div class="color-selector" id="modalColors">
+                <button class="color-btn purple active" data-color="purple" aria-label="Purple theme"></button>
+                <button class="color-btn cyan" data-color="cyan" aria-label="Cyan theme"></button>
+                <button class="color-btn green" data-color="green" aria-label="Green theme"></button>
+                <button class="color-btn red" data-color="red" aria-label="Red theme"></button>
+              </div>
+            </div>
+            
+            <div class="modal-footer">
+              <button class="btn btn-primary modal-add-btn" id="modalAddToCartBtn">
+                Load Into Manifest <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- View 2: Immersive Checkout View -->
+      <div class="checkout-view" id="checkoutView">
+        <div class="checkout-grid">
+          <!-- Billing Details Form & Card Flip -->
+          <div class="checkout-form-container">
+            <h3 class="form-title"><i class="fa-solid fa-shield-halved"></i> Transaction Port</h3>
+            
+            <!-- Interactive Credit Card Graphic -->
+            <div class="credit-card-wrapper">
+              <div class="credit-card" id="creditCardGraphic">
+                <!-- Card Front -->
+                <div class="card-front">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="card-chip"></div>
+                    <i class="fa-brands fa-cc-visa" style="font-size: 2rem; color: #fff;"></i>
+                  </div>
+                  <div class="card-number" id="ccFrontNumber">•••• •••• •••• ••••</div>
+                  <div class="card-meta">
+                    <div>
+                      <div class="card-holder-label">Interface Operator</div>
+                      <div class="card-holder" id="ccFrontHolder">AURA OPERATOR</div>
+                    </div>
+                    <div>
+                      <div class="card-expiry-label">Exp</div>
+                      <div class="card-expiry" id="ccFrontExpiry">08/30</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card Back -->
+                <div class="card-back">
+                  <div class="card-stripe"></div>
+                  <div class="card-signature-cvv">
+                    <div class="card-signature-box"></div>
+                    <div class="card-cvv-box" id="ccBackCvv">•••</div>
+                  </div>
+                  <p style="text-align: right; font-size: 0.5rem; color: var(--text-secondary); margin-top: 0.5rem;">CYBERNETIC SECURE ENCLAVE</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Actual Form fields -->
+            <form class="checkout-form" id="checkoutForm" onsubmit="return false;">
+              <div class="form-field">
+                <label for="chName">Billing Operator Name</label>
+                <input type="text" id="chName" required placeholder="NANDHA KUMAR" autocomplete="name">
+              </div>
+              
+              <div class="form-field">
+                <label for="ccNumber">Secure Card Allocation</label>
+                <input type="text" id="ccNumber" required placeholder="4111 2222 3333 4444" autocomplete="cc-number" maxlength="19">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="ccExp">Expiration Node</label>
+                  <input type="text" id="ccExp" required placeholder="MM/YY" autocomplete="cc-exp" maxlength="5">
+                </div>
+                <div class="form-field">
+                  <label for="ccCvv">Enclave CVV</label>
+                  <input type="text" id="ccCvv" required placeholder="777" autocomplete="cc-csc" maxlength="3">
+                </div>
+              </div>
+              
+              <div class="form-row" style="margin-top: 0.5rem;">
+                <button type="button" class="btn btn-secondary" id="checkoutBackBtn">Back To Store</button>
+                <button type="submit" class="btn btn-primary" id="submitPaymentBtn">
+                  Confirm Node Transfer <i class="fa-solid fa-circle-check"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          
+          <!-- Selected items review -->
+          <div class="checkout-summary-container">
+            <h3 class="form-title"><i class="fa-solid fa-list-check"></i> Allocation Audit</h3>
+            <div class="checkout-order-summary">
+              <div class="checkout-summary-items" id="checkoutSummaryItems">
+                <!-- Populated dynamically -->
+              </div>
+              
+              <div style="border-top: 1px solid var(--glass-border); padding-top: 1rem;">
+                <div class="cart-summary-line">
+                  <span>Gross Allocation</span>
+                  <span id="checkoutSubtotal">$0.00</span>
+                </div>
+                <div class="cart-summary-line">
+                  <span>Enclave Taxes</span>
+                  <span id="checkoutTaxes">$0.00</span>
+                </div>
+                <div class="cart-summary-line total">
+                  <span>Node Sum</span>
+                  <span id="checkoutGrandTotal" style="color: var(--accent-cyan);">$0.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- View 3: Complete Success View -->
+      <div class="success-view" id="successView">
+        <div class="success-icon-wrap">
+          <i class="fa-solid fa-network-wired"></i>
+        </div>
+        <h3 class="success-title">Node Transfer Successful</h3>
+        <p class="success-desc">
+          Your payment transaction has completed. Quantum delivery algorithms have initiated and your order has been sent to processing node <strong id="successNodeVal">#NODE-4082</strong>.
+        </p>
+        <button class="btn btn-primary" id="successCloseBtn">
+          Return To Nexus Grid
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Floating Toast Notifications System -->
+  <div class="toast-container" id="toastContainer"></div>
+  
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo-desc">
+          <a href="#" class="logo" style="font-size: 2.2rem;">
+            <i class="fa-solid fa-cube"></i> AURA
+          </a>
+          <p class="footer-desc">
+            Defining the future of digital-physical streetwear through modular cybernetics and bioluminescent polymers.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" id="socTwitter" aria-label="AURA Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-icon" id="socDiscord" aria-label="AURA Discord"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" class="social-icon" id="socInstagram" aria-label="AURA Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Nexus Nodes</h4>
+          <ul class="footer-links">
+            <li><a href="#" id="linkCatalog">Catalog Specs</a></li>
+            <li><a href="#" id="linkReleases">Limited Drops</a></li>
+            <li><a href="#" id="linkBiolume">Biolume Guide</a></li>
+            <li><a href="#" id="linkRecycling">Composite Recycling</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Protocols</h4>
+          <ul class="footer-links">
+            <li><a href="#" id="linkShipping">Quantum Logistics</a></li>
+            <li><a href="#" id="linkReturns">Node Returns</a></li>
+            <li><a href="#" id="linkSecurity">Enclave Security</a></li>
+            <li><a href="#" id="linkStatus">Grid Status</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Grid Updates</h4>
+          <p class="footer-desc" style="margin-bottom: 1rem; font-size: 0.85rem;">
+            Subscribe to receive high-priority drop alerts directly in your inbox.
+          </p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="return false;">
+            <div class="newsletter-input-wrap">
+              <input type="email" class="newsletter-input" placeholder="operator@nexus.com" required id="newsletterEmail">
+              <button type="submit" class="newsletter-btn" id="newsletterSubmitBtn">Inject</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p id="copyrightText">&copy; 2026 AURA Inc. Systems Online. All rights reserved.</p>
+        <p>Terminal connection encrypted. SHA-256</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript Operations -->
+  <script src="app.js"></script>
+</body>
+</html>
